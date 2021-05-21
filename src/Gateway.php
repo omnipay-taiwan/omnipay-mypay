@@ -6,14 +6,15 @@ use Omnipay\Common\AbstractGateway;
 use Omnipay\Common\Message\AbstractRequest;
 use Omnipay\Common\Message\NotificationInterface;
 use Omnipay\Common\Message\RequestInterface;
-use Omnipay\MyPay\Message\AuthorizeRequest;
+use Omnipay\MyPay\Message\PurchaseRequest;
+use Omnipay\MyPay\Traits\HasDefaults;
 
 /**
- * MyPay Gateway
+ * MyPay Gateway.
  * @method NotificationInterface acceptNotification(array $options = [])
+ * @method RequestInterface authorize(array $options = [])
  * @method RequestInterface completeAuthorize(array $options = [])
  * @method RequestInterface capture(array $options = [])
- * @method RequestInterface purchase(array $options = [])
  * @method RequestInterface completePurchase(array $options = [])
  * @method RequestInterface refund(array $options = [])
  * @method RequestInterface fetchTransaction(array $options = [])
@@ -24,6 +25,8 @@ use Omnipay\MyPay\Message\AuthorizeRequest;
  */
 class Gateway extends AbstractGateway
 {
+    use HasDefaults;
+
     public function getName()
     {
         return 'MyPay';
@@ -32,26 +35,17 @@ class Gateway extends AbstractGateway
     public function getDefaultParameters()
     {
         return [
+            'store_uid' => '',
             'key' => '',
             'testMode' => false,
         ];
     }
 
-    public function getKey()
-    {
-        return $this->getParameter('key');
-    }
-
-    public function setKey($value)
-    {
-        return $this->setParameter('key', $value);
-    }
-
     /**
      * @return AbstractRequest
      */
-    public function authorize(array $options = [])
+    public function purchase(array $options = [])
     {
-        return $this->createRequest(AuthorizeRequest::class, $options);
+        return $this->createRequest(PurchaseRequest::class, $options);
     }
 }

@@ -1,0 +1,18 @@
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sat, 22 May 2021 12:28:50 GMT
+Content-Type: application/json; charset=UTF-8
+Content-Length: 157
+Connection: keep-alive
+Cache-Control: no-cache, private
+Set-Cookie: XSRF-TOKEN=eyJpdiI6IndUVGNZRGFWdGdKS3g3VEVPbmo5dVE9PSIsInZhbHVlIjoiajAwQkRtS3ZJVUVlcGFuRURJSjl6ODMrdlRNT2h0ZTd4cjZhUmZ3V3M4a0p6WWFiWEpUVFNvSzdWS09pRHc4R3hLNUJ6Zjl2K0JCVFwvKzFLOTdLZ2xBV2p3djRCUlU3WUJqTVpnN2dhTWxvYVNKdUVJZVdpZVZzbURTekpkSE12IiwibWFjIjoiNmY3ZGVmMjFiMGJhYzczMWY0YTdiNTZiM2MyZmRiMzkwY2JmZmRjMDNjNTViMTExOWM4OGIzZDA4YzQ0ZmZlMCJ9; expires=Sat, 22-May-2021 12:43:50 GMT; path=/; HTTPOnly; Secure
+Set-Cookie: laravel_session=eyJpdiI6Ikk1N0JMdFBhUndpclpsTE55WHYwcUE9PSIsInZhbHVlIjoibnRcL091SVFOZXFTaCthdUFBZkI4SzBFQnJ1dDREbnU1aVpUZ0lqSWZtVXNyMk9hNTBsK3JWZXpSNEVsb01HREZcL1QrTTdiaU1zdU85eFFmYVI4NjVZTEdtc2JQN2wwOGdTSXhGYnI4bGV5V0dEYkpQYk0xYlQrVElvVzF4T3VxciIsIm1hYyI6IjMxYTY2ZDQ2MTc0M2VmZjZjNTJlYjFlYTc0YmZjYWE5YWJhODVkYTc2ODM5YmFjZjhkYjI1NDkzMDUxZDQ3ZjEifQ%3D%3D; path=/; HTTPOnly; Secure; httponly
+Status: 200 OK
+
+{
+    "code": "200",
+    "msg": "資料正確",
+    "url": "https:\/\/pay.usecase.cc\/payment\/86563.html",
+    "uid": 86563,
+    "key": "a82533e3fabc4c462b0287394cfdd49a"
+}

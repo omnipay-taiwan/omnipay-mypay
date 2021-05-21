@@ -7,21 +7,19 @@ use Omnipay\Tests\TestCase;
 
 class ResponseTest extends TestCase
 {
-    public function testConstruct()
+    public function test_purchase_success()
     {
-        // response should decode URL format data
-        $response = new Response($this->getMockRequest(), ['example' => 'value', 'foo' => 'bar']);
-        $this->assertEquals(['example' => 'value', 'foo' => 'bar'], $response->getData());
-    }
+        $httpResponse = $this->getMockHttpResponse('PurchaseSuccess.txt');
 
-    public function testProPurchaseSuccess()
-    {
-        $httpResponse = $this->getMockHttpResponse('AuthorizeSuccess.txt');
+        $request = $this->getMockRequest();
+        $request->shouldReceive('getLocale')->andReturnNull();
         $data = json_decode($httpResponse->getBody(), true);
-        $response = new Response($this->getMockRequest(), $data);
+        $response = new Response($request, $data);
 
-        $this->assertTrue($response->isSuccessful());
-        $this->assertEquals('1234', $response->getTransactionReference());
-        $this->assertNull($response->getMessage());
+        self::assertFalse($response->isSuccessful());
+        self::assertTrue($response->isRedirect());
+        self::assertEquals('86563', $response->getTransactionReference());
+        self::assertEquals('資料正確', $response->getMessage());
+        self::assertEquals('https://pay.usecase.cc/payment/86563.html', $response->getRedirectUrl());
     }
 }

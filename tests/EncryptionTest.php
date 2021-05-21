@@ -10,10 +10,10 @@ class EncryptionTest extends TestCase
     public function test_encrypt_by_phpseclib_array()
     {
         //經銷商商店金鑰【從用戶端發動時，以驗證碼代替金鑰】
-        $key = "Xd668CSjnXQLD26Hia8vapkOgGXAv68s";
+        $key = 'Xd668CSjnXQLD26Hia8vapkOgGXAv68s';
         //商品資料
         $payment = [
-            'store_uid' => "398800730001", //特店id
+            'store_uid' => '398800730001', //特店id
             'item' => 1,
             'i_0_id' => '0886449',
             'i_0_name' => '商品名稱',
@@ -21,10 +21,10 @@ class EncryptionTest extends TestCase
             'i_0_amount' => '1',
             'i_0_total' => '10',
             'cost' => 10,
-            'user_id' => "phper",
-            'order_id' => "1234567890",
+            'user_id' => 'phper',
+            'order_id' => '1234567890',
             'ip' => '127.0.0.1', // 此為消費者IP，會做為驗證用
-            'pfn' => "all",
+            'pfn' => 'all',
         ];
         $encryption = new Encryption($key);
         $encrypt = $encryption->encrypt($payment);
@@ -35,10 +35,10 @@ class EncryptionTest extends TestCase
     public function test_decrypt_by_phpseclib_array()
     {
         //經銷商商店金鑰【從用戶端發動時，以驗證碼代替金鑰】
-        $key = "Xd668CSjnXQLD26Hia8vapkOgGXAv68s";
+        $key = 'Xd668CSjnXQLD26Hia8vapkOgGXAv68s';
         //商品資料
         $payment = [
-            'store_uid' => "398800730001", //特店id
+            'store_uid' => '398800730001', //特店id
             'item' => 1,
             'i_0_id' => '0886449',
             'i_0_name' => '商品名稱',
@@ -46,10 +46,10 @@ class EncryptionTest extends TestCase
             'i_0_amount' => '1',
             'i_0_total' => '10',
             'cost' => 10,
-            'user_id' => "phper",
-            'order_id' => "1234567890",
+            'user_id' => 'phper',
+            'order_id' => '1234567890',
             'ip' => '127.0.0.1', // 此為消費者IP，會做為驗證用
-            'pfn' => "all",
+            'pfn' => 'all',
         ];
         $encrypt = encrypt($payment, $key);
         $encryption = new Encryption($key);

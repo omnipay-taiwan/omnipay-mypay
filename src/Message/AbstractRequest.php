@@ -3,43 +3,27 @@
 namespace Omnipay\MyPay\Message;
 
 use Omnipay\Common\Message\AbstractRequest as BaseAbstractRequest;
+use Omnipay\MyPay\Encryption;
+use Omnipay\MyPay\Traits\HasDefaults;
 
 /**
- * Abstract Request
- *
+ * Abstract Request.
  */
 abstract class AbstractRequest extends BaseAbstractRequest
 {
-    protected $liveEndpoint = 'https://api.example.com';
-    protected $testEndpoint = 'https://api-test.example.com';
+    use HasDefaults;
 
-    public function getKey()
-    {
-        return $this->getParameter('key');
-    }
-
-    public function setKey($value)
-    {
-        return $this->setParameter('key', $value);
-    }
+    protected $liveEndpoint = 'https://pay.usecase.cc/api/init';
+    protected $testEndpoint = 'https://mypay.tw/api/init';
 
     public function sendData($data)
     {
-        $url = $this->getEndpoint().'?'.http_build_query($data, '', '&');
-        $response = $this->httpClient->request('GET', $url);
+        $url = $this->getEndpoint();
+        $headers = ['Content-Type' => 'application/x-www-form-urlencoded'];
+        $body = $this->createBody(new Encryption($this->getKey()), $data);
+        $response = $this->httpClient->request('POST', $url, $headers, http_build_query($body));
 
-        $data = json_decode($response->getBody(), true);
-
-        return $this->createResponse($data);
-    }
-
-    protected function getBaseData()
-    {
-        return [
-            'transaction_id' => $this->getTransactionId(),
-            'expire_date' => $this->getCard()->getExpiryDate('mY'),
-            'start_date' => $this->getCard()->getStartDate('mY'),
-        ];
+        return $this->createResponse(json_decode((string) $response->getBody(), true));
     }
 
     protected function getEndpoint()
@@ -51,4 +35,11 @@ abstract class AbstractRequest extends BaseAbstractRequest
     {
         return $this->response = new Response($this, $data);
     }
+
+    /**
+     * @param Encryption $encryption
+     * @param array $data
+     * @return array
+     */
+    abstract protected function createBody(Encryption $encryption, array $data);
 }
