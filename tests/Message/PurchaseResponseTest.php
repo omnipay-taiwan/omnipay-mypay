@@ -2,10 +2,10 @@
 
 namespace Omnipay\MyPay\Test\Message;
 
-use Omnipay\MyPay\Message\Response;
+use Omnipay\MyPay\Message\PurchaseResponse;
 use Omnipay\Tests\TestCase;
 
-class ResponseTest extends TestCase
+class PurchaseResponseTest extends TestCase
 {
     public function test_purchase_success()
     {
@@ -14,7 +14,7 @@ class ResponseTest extends TestCase
         $request = $this->getMockRequest();
         $request->shouldReceive('getLocale')->andReturnNull();
         $data = json_decode($httpResponse->getBody(), true);
-        $response = new Response($request, $data);
+        $response = new PurchaseResponse($request, $data);
 
         self::assertFalse($response->isSuccessful());
         self::assertTrue($response->isRedirect());

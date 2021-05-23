@@ -33,7 +33,7 @@ abstract class AbstractRequest extends BaseAbstractRequest
 
     protected function createResponse($data)
     {
-        return $this->response = new Response($this, $data);
+        return $this->response = new PurchaseResponse($this, $data);
     }
 
     /**

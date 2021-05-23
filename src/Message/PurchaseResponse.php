@@ -8,7 +8,7 @@ use Omnipay\Common\Message\RedirectResponseInterface;
 /**
  * Response.
  */
-class Response extends AbstractResponse implements RedirectResponseInterface
+class PurchaseResponse extends AbstractResponse implements RedirectResponseInterface
 {
     /**
      * Response code.

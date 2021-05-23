@@ -16,7 +16,7 @@ use Omnipay\MyPay\Traits\HasUserInfo;
 /**
  * Purchase Request.
  *
- * @method Response send()
+ * @method PurchaseResponse send()
  */
 class PurchaseRequest extends AbstractRequest
 {
