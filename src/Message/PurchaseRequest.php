@@ -10,6 +10,8 @@ use Omnipay\MyPay\Traits\HasCardLess;
 use Omnipay\MyPay\Traits\HasEcho;
 use Omnipay\MyPay\Traits\HasEWallet;
 use Omnipay\MyPay\Traits\HasInvoice;
+use Omnipay\MyPay\Traits\HasLocale;
+use Omnipay\MyPay\Traits\HasOrderInfo;
 use Omnipay\MyPay\Traits\HasRegular;
 use Omnipay\MyPay\Traits\HasUserInfo;
 
@@ -20,12 +22,14 @@ use Omnipay\MyPay\Traits\HasUserInfo;
  */
 class PurchaseRequest extends AbstractRequest
 {
+    use HasOrderInfo;
     use HasUserInfo;
     use HasRegular;
     use HasEcho;
     use HasEWallet;
     use HasCardLess;
     use HasInvoice;
+    use HasLocale;
     use HasAgent;
 
     public function setVouchers($value)
@@ -52,6 +56,9 @@ class PurchaseRequest extends AbstractRequest
         return $this->setParameter('discount', abs($value) * -1);
     }
 
+    /**
+     * @return int|null
+     */
     public function getDiscount()
     {
         return $this->getParameter('discount');
@@ -237,41 +244,6 @@ class PurchaseRequest extends AbstractRequest
     }
 
     /**
-     * @param string|int $value
-     * @return $this
-     */
-    public function setCost($value)
-    {
-        return $this->setAmount($value);
-    }
-
-    /**
-     * @return string
-     * @throws InvalidRequestException
-     */
-    public function getCost()
-    {
-        return $this->getAmount();
-    }
-
-    /**
-     * @param string $value
-     * @return $this
-     */
-    public function setOrderId($value)
-    {
-        return $this->setTransactionId($value);
-    }
-
-    /**
-     * @return string
-     */
-    public function getOrderId()
-    {
-        return $this->getTransactionId();
-    }
-
-    /**
      * @param string $value
      * @return $this
      */
@@ -286,28 +258,6 @@ class PurchaseRequest extends AbstractRequest
     public function getIp()
     {
         return $this->getClientIp();
-    }
-
-    /**
-     * 可使用方式有三種，第一種為建議方案
-     * 1. 所有支付:pfn=all 導入mypay頁面讓消費 者選擇付款方式，在後台有開啟服務的支付工具都會顯示。
-     * 2. 多種支付:pfn=1,3,5 導入mypay頁面讓 消費者選擇付款方式，只會顯示有值的支 付工具。
-     * 3. 單一支付:pfn=1，如pfn=1為信用卡
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setPfn($value)
-    {
-        return $this->setParameter('pfn', $value);
-    }
-
-    /**
-     * @return string
-     */
-    public function getPfn()
-    {
-        return $this->getParameter('pfn') ?: 'all';
     }
 
     /**

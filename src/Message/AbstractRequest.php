@@ -4,14 +4,16 @@ namespace Omnipay\MyPay\Message;
 
 use Omnipay\Common\Message\AbstractRequest as BaseAbstractRequest;
 use Omnipay\MyPay\Encryption;
-use Omnipay\MyPay\Traits\HasDefaults;
+use Omnipay\MyPay\Traits\HasKey;
+use Omnipay\MyPay\Traits\HasStoreUid;
 
 /**
  * Abstract Request.
  */
 abstract class AbstractRequest extends BaseAbstractRequest
 {
-    use HasDefaults;
+    use HasStoreUid;
+    use HasKey;
 
     protected $liveEndpoint = 'https://pay.usecase.cc/api/init';
     protected $testEndpoint = 'https://mypay.tw/api/init';

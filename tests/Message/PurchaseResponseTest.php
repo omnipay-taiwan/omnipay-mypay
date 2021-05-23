@@ -10,10 +10,10 @@ class PurchaseResponseTest extends TestCase
     public function test_purchase_success()
     {
         $httpResponse = $this->getMockHttpResponse('PurchaseSuccess.txt');
+        $data = json_decode($httpResponse->getBody(), true);
 
         $request = $this->getMockRequest();
         $request->shouldReceive('getLocale')->andReturnNull();
-        $data = json_decode($httpResponse->getBody(), true);
         $response = new PurchaseResponse($request, $data);
 
         self::assertFalse($response->isSuccessful());

@@ -78,4 +78,45 @@ class GatewayTest extends GatewayTestCase
             'i_0_total' => 10,
         ], $options);
     }
+
+    public function test_complete_purchase()
+    {
+        $options = [
+            'key' => 'dee886ee19ddbb97e2968a1a8777fc7d',
+            'prc' => '250',
+            'finishtime' => '20210523141536',
+            'uid' => '86579',
+            'order_id' => 'd5jUed1tkQ9cDaD1',
+            'user_id' => 'DoSuccess3D',
+            'cost' => '1000.00',
+            'currency' => 'TWD',
+            'actual_cost' => '1000',
+            'actual_currency' => 'TWD',
+            'love_cost' => '0',
+            'retmsg' => '付款完成',
+            'pfn' => 'CREDITCARD',
+            'trans_type' => '1',
+            'redeem' => null,
+            'payment_name' => null,
+            'nois' => null,
+            'group_id' => null,
+            'bank_id' => null,
+            'expired_date' => null,
+            'result_type' => '4',
+            'result_content_type' => 'CREDITCARD',
+            'result_content' => '{}',
+            'echo_0' => null,
+            'echo_1' => null,
+            'echo_2' => null,
+            'echo_3' => null,
+            'echo_4' => null,
+        ];
+
+        $response = $this->gateway->completePurchase($options)->send();
+
+        self::assertTrue($response->isSuccessful());
+        self::assertEquals('250', $response->getCode());
+        self::assertEquals('付款完成', $response->getMessage());
+        self::assertEquals('86579', $response->getTransactionReference());
+    }
 }

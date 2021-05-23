@@ -5,30 +5,6 @@ namespace Omnipay\MyPay\Traits;
 trait HasUserInfo
 {
     /**
-     * 該消費者在特店中註冊帳號名稱
-     * 電子錢包交易、定期定額交易必要欄位
-     * 黑名單機制:被列入黑名單，則無法進行交易。
-     * 風險管理機制:在特店模式中，可設定該帳號的
-     * 交易次數、單筆金額與交易上限;若採代收代付
-     * 模式，則無法自行設定。
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setUserId($value)
-    {
-        return $this->setParameter('user_id', $value);
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getUserId()
-    {
-        return $this->getParameter('user_id');
-    }
-
-    /**
      * 消費者姓名
      * 電子錢包交易必要欄位.
      *

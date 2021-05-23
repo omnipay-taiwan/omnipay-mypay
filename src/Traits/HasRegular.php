@@ -51,26 +51,6 @@ trait HasRegular
     }
 
     /**
-     * 1.定期定額式付費編號
-     * 2.定期分期式付費編號 (若有傳送此編號，主動回報時將會回傳此編號， 否則傳送系統產生之編號).
-     *
-     * @param string $value
-     * @return $this
-     */
-    public function setGroupId($value)
-    {
-        return $this->setParameter('group_id', $value);
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getGroupId()
-    {
-        return $this->getParameter('group_id');
-    }
-
-    /**
      * 定期扣款起扣日(若未指定日期、或早於今日，則 將判定為當日扣款)
      * (格式為 YYYYMMDD，如 20090916).
      *
