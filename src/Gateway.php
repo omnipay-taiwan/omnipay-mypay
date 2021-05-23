@@ -7,10 +7,10 @@ use Omnipay\Common\Message\AbstractRequest;
 use Omnipay\Common\Message\RequestInterface;
 use Omnipay\MyPay\Message\AcceptNotificationRequest;
 use Omnipay\MyPay\Message\CompletePurchaseRequest;
+use Omnipay\MyPay\Message\FetchTransactionRequest;
 use Omnipay\MyPay\Message\PurchaseRequest;
-use Omnipay\MyPay\Traits\HasKey;
 use Omnipay\MyPay\Traits\HasLocale;
-use Omnipay\MyPay\Traits\HasStoreUid;
+use Omnipay\MyPay\Traits\HasStore;
 
 /**
  * MyPay Gateway.
@@ -18,7 +18,6 @@ use Omnipay\MyPay\Traits\HasStoreUid;
  * @method RequestInterface completeAuthorize(array $options = [])
  * @method RequestInterface capture(array $options = [])
  * @method RequestInterface refund(array $options = [])
- * @method RequestInterface fetchTransaction(array $options = [])
  * @method RequestInterface void(array $options = [])
  * @method RequestInterface createCard(array $options = [])
  * @method RequestInterface updateCard(array $options = [])
@@ -26,8 +25,7 @@ use Omnipay\MyPay\Traits\HasStoreUid;
  */
 class Gateway extends AbstractGateway
 {
-    use HasStoreUid;
-    use HasKey;
+    use HasStore;
     use HasLocale;
 
     public function getName()
@@ -39,7 +37,7 @@ class Gateway extends AbstractGateway
     {
         return [
             'store_uid' => '',
-            'key' => '',
+            'store_key' => '',
             'testMode' => false,
         ];
     }
@@ -68,5 +66,10 @@ class Gateway extends AbstractGateway
     public function acceptNotification(array $options = [])
     {
         return $this->createRequest(AcceptNotificationRequest::class, $options);
+    }
+
+    public function fetchTransaction(array $options = [])
+    {
+        return $this->createRequest(FetchTransactionRequest::class, $options);
     }
 }

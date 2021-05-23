@@ -349,6 +349,15 @@ class PurchaseRequest extends AbstractRequest
     }
 
     /**
+     * @param $data
+     * @return PurchaseResponse
+     */
+    protected function createResponse($data)
+    {
+        return $this->response = new PurchaseResponse($this, $data);
+    }
+
+    /**
      * @param array $data
      * @return array
      */

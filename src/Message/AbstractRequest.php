@@ -3,17 +3,16 @@
 namespace Omnipay\MyPay\Message;
 
 use Omnipay\Common\Message\AbstractRequest as BaseAbstractRequest;
+use Omnipay\Common\Message\ResponseInterface;
 use Omnipay\MyPay\Encryption;
-use Omnipay\MyPay\Traits\HasKey;
-use Omnipay\MyPay\Traits\HasStoreUid;
+use Omnipay\MyPay\Traits\HasStore;
 
 /**
  * Abstract Request.
  */
 abstract class AbstractRequest extends BaseAbstractRequest
 {
-    use HasStoreUid;
-    use HasKey;
+    use HasStore;
 
     protected $liveEndpoint = 'https://pay.usecase.cc/api/init';
     protected $testEndpoint = 'https://mypay.tw/api/init';
@@ -22,7 +21,7 @@ abstract class AbstractRequest extends BaseAbstractRequest
     {
         $url = $this->getEndpoint();
         $headers = ['Content-Type' => 'application/x-www-form-urlencoded'];
-        $body = $this->createBody(new Encryption($this->getKey()), $data);
+        $body = $this->createBody(new Encryption($this->getStoreKey()), $data);
         $response = $this->httpClient->request('POST', $url, $headers, http_build_query($body));
 
         return $this->createResponse(json_decode((string) $response->getBody(), true));
@@ -33,15 +32,16 @@ abstract class AbstractRequest extends BaseAbstractRequest
         return $this->getTestMode() ? $this->testEndpoint : $this->liveEndpoint;
     }
 
-    protected function createResponse($data)
-    {
-        return $this->response = new PurchaseResponse($this, $data);
-    }
-
     /**
      * @param Encryption $encryption
      * @param array $data
      * @return array
      */
     abstract protected function createBody(Encryption $encryption, array $data);
+
+    /**
+     * @param array $data
+     * @return ResponseInterface
+     */
+    abstract protected function createResponse($data);
 }

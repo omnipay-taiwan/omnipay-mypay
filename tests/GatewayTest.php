@@ -20,6 +20,10 @@ class GatewayTest extends GatewayTestCase
      * @var string
      */
     private $storeUid = '398800730001';
+    /**
+     * @var string
+     */
+    private $storeKey = 'Xd668CSjnXQLD26Hia8vapkOgGXAv68s';
 
     public function setUp()
     {
@@ -28,11 +32,10 @@ class GatewayTest extends GatewayTestCase
         $httpRequest = Request::createFromGlobals();
         $httpRequest->server->set('REMOTE_ADDR', '127.0.0.1');
         $this->gateway = new Gateway($this->getHttpClient(), $httpRequest);
-        $key = 'Xd668CSjnXQLD26Hia8vapkOgGXAv68s';
-        $this->encryption = new Encryption($key);
+        $this->encryption = new Encryption($this->storeKey);
         $this->gateway->initialize([
             'store_uid' => $this->storeUid,
-            'key' => $key,
+            'store_key' => $this->storeKey,
             'locale' => 'en',
         ]);
     }
@@ -156,5 +159,21 @@ class GatewayTest extends GatewayTestCase
         $response = $this->gateway->acceptNotification($options);
 
         self::assertEquals('8888', $response->getMessage());
+    }
+
+    public function test_fetch_transaction()
+    {
+        $this->setMockHttpResponse('FetchTransactionSuccess.txt');
+
+        $options = [
+            'uid' => '86579',
+            'key' => 'dee886ee19ddbb97e2968a1a8777fc7d',
+        ];
+        $response = $this->gateway->fetchTransaction($options)->send();
+
+        self::assertTrue($response->isSuccessful());
+        self::assertEquals('250', $response->getCode());
+        self::assertEquals('付款完成', $response->getMessage());
+        self::assertEquals('86579', $response->getTransactionReference());
     }
 }

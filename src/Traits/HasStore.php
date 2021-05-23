@@ -2,7 +2,7 @@
 
 namespace Omnipay\MyPay\Traits;
 
-trait HasStoreUid
+trait HasStore
 {
     /**
      * @return string
@@ -21,5 +21,22 @@ trait HasStoreUid
     public function setStoreUid($value)
     {
         return $this->setParameter('store_uid', $value);
+    }
+
+    /**
+     * @return string
+     */
+    public function getStoreKey()
+    {
+        return $this->getParameter('store_key');
+    }
+
+    /**
+     * @param string $value
+     * @return $this
+     */
+    public function setStoreKey($value)
+    {
+        return $this->setParameter('store_key', $value);
     }
 }

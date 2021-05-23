@@ -1,0 +1,69 @@
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sun, 23 May 2021 16:13:27 GMT
+Content-Type: application/json; charset=UTF-8
+Content-Length: 628
+Connection: keep-alive
+Cache-Control: no-cache, private
+Set-Cookie: XSRF-TOKEN=eyJpdiI6ImNWTEtYTUlxMkJSdHhmNVNaQWJtb0E9PSIsInZhbHVlIjoidGZxVEpUTkluMjg0QnErSEhJMVBnSVdHdEpncVlxd0NucnhwMnpYV2VldnRnYnJcLzYwMU1sTTB6czFPampNMmNITUVsdDVzdUNuUmRnanlsTkxaZXZ6eUJ0RmJ5NkRCbHJBSjVhQiszZFJLSHM4UWNsN2ZKUlR4WHJLQ1RXc1plIiwibWFjIjoiYzZiYWE2MWRmMDc5ODFkMWY3Y2RlYTVmYjg2YjU2OGZhMzRjOTE0ZDk4NDQ4OTA0M2YyZDA5YTdmZTI4M2Y4ZiJ9; expires=Sun, 23-May-2021 16:28:27 GMT; path=/; HTTPOnly; Secure
+Set-Cookie: laravel_session=eyJpdiI6InQwMk96QitqWHBpcmdDR3FMZGZ3bXc9PSIsInZhbHVlIjoiQ0pTMEV6bDZRNlN3dEpUR0xhSU1pRkNub2IxWVhwNWlrcm9CVnRzc25NYXlWZmFpanp0ckJ1NXBYQzU4RERcL1wvNG1BV1JENkdJTnM2MzVWNVhzWVI2Skc4a3RvemFDU053OGpBS3Y2OUdyaFQrb2xHbkpRVlp0NjBydW1RMlVHQyIsIm1hYyI6IjEyZWRkNWFjMzU1N2ZmZDE0NzNjMjA0N2ExZGNhMTI2Mjg5ZGM2ZGIzODhmMjcyZTZjZDkyZDdiYmJkOTg4ZGMifQ%3D%3D; path=/; HTTPOnly; Secure; httponly
+Status: 200 OK
+
+{
+    "key": "dee886ee19ddbb97e2968a1a8777fc7d",
+    "prc": "250",
+    "cardno": "490706******5101",
+    "acode": "AA1234",
+    "issuing_bank": "合作金庫",
+    "issuing_bank_uid": "006",
+    "transaction_mode": 1,
+    "supplier_name": "高鉅金融",
+    "supplier_code": "T0",
+    "order_id": "d5jUed1tkQ9cDaD1",
+    "user_id": "DoSuccess3D",
+    "uid": 86579,
+    "cost": 1000,
+    "currency": "TWD",
+    "actual_cost": 1000,
+    "actual_currency": "TWD",
+    "love_cost": 0,
+    "retmsg": "付款完成",
+    "pay_mode_uid": 1,
+    "pfn": "CREDITCARD",
+    "trans_type": 1,
+    "redeem": "",
+    "finishtime": "20210523141536",
+    "store_group_id": "",
+    "nois": "",
+    "payment_name": "",
+    "bank_id": "",
+    "result_type": 4,
+    "result_content_type": "CREDITCARD",
+    "result_content": "{}",
+    "expired_date": "",
+    "appropriation_date": "",
+    "invoice_state": 1,
+    "invoice_date": "",
+    "invoice_wordtrack": "",
+    "invoice_number": "",
+    "invoice_rand_code": "",
+    "invoice_seller_ban": "",
+    "invoice_buyer_ban": "",
+    "invoice_left_qrcode": "",
+    "invoice_middle_barcode": "",
+    "invoice_right_qrcode": "",
+    "invoice_title_type": 1,
+    "invoice_title": "",
+    "invoice_amount": "0",
+    "invoice_sales_amount": "0",
+    "invoice_tax_amount": "0",
+    "invoice_order_detail": "[]",
+    "invoice_ratetype": 1,
+    "invoice_input_type": 2,
+    "invoice_allowance": [],
+    "echo_0": "",
+    "echo_1": "",
+    "echo_2": "",
+    "echo_3": "",
+    "echo_4": ""
+}
