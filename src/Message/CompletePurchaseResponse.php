@@ -3,8 +3,9 @@
 namespace Omnipay\MyPay\Message;
 
 use Omnipay\Common\Message\AbstractResponse;
+use Omnipay\Common\Message\NotificationInterface;
 
-class CompletePurchaseResponse extends AbstractResponse
+class CompletePurchaseResponse extends AbstractResponse implements NotificationInterface
 {
     /**
      * Is the response successful?
@@ -44,5 +45,10 @@ class CompletePurchaseResponse extends AbstractResponse
     public function getTransactionReference()
     {
         return $this->data['uid'];
+    }
+
+    public function getTransactionStatus()
+    {
+        return $this->isSuccessful() ? self::STATUS_COMPLETED : self::STATUS_FAILED;
     }
 }

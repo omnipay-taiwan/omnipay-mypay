@@ -3,12 +3,14 @@
 namespace Omnipay\MyPay\Message;
 
 use Omnipay\Common\Message\AbstractRequest as BaseAbstractRequest;
+use Omnipay\Common\Message\NotificationInterface;
+use Omnipay\Common\Message\ResponseInterface;
 use Omnipay\MyPay\Traits\HasEcho;
 use Omnipay\MyPay\Traits\HasKey;
 use Omnipay\MyPay\Traits\HasOrderInfo;
 use Omnipay\MyPay\Traits\HasStoreUid;
 
-class CompletePurchaseRequest extends BaseAbstractRequest
+class CompletePurchaseRequest extends BaseAbstractRequest implements NotificationInterface
 {
     use HasStoreUid;
     use HasKey;
@@ -234,8 +236,30 @@ class CompletePurchaseRequest extends BaseAbstractRequest
         ];
     }
 
+    /**
+     * @param array $data
+     * @return CompletePurchaseResponse
+     */
     public function sendData($data)
     {
         return $this->response = new CompletePurchaseResponse($this, $data);
+    }
+
+    public function getTransactionStatus()
+    {
+        return $this->getNotification()->getTransactionStatus();
+    }
+
+    public function getMessage()
+    {
+        return $this->getNotification()->getMessage();
+    }
+
+    /**
+     * @return ResponseInterface
+     */
+    private function getNotification()
+    {
+        return ! $this->response ? $this->send() : $this->response;
     }
 }
