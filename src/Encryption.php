@@ -7,7 +7,10 @@ use phpseclib3\Crypt\Random;
 
 class Encryption
 {
-    private $key;
+    /**
+     * @var AES
+     */
+    private $cipher;
 
     /**
      * Encryption constructor.
@@ -15,6 +18,7 @@ class Encryption
      */
     public function __construct($key = null)
     {
+        $this->cipher = new AES('cbc');
         $this->setKey($key);
     }
 
@@ -24,7 +28,7 @@ class Encryption
      */
     public function setKey($key)
     {
-        $this->key = $key;
+        $this->cipher->setKey($key);
 
         return $this;
     }
@@ -37,7 +41,7 @@ class Encryption
     {
         $iv = Random::string(16);
 
-        return base64_encode($iv.$this->getCipher($iv)->encrypt(json_encode($data)));
+        return base64_encode($iv.$this->updateIv($iv)->encrypt(json_encode($data)));
     }
 
     /**
@@ -49,19 +53,17 @@ class Encryption
         $binary = base64_decode($plainText);
         $iv = substr($binary, 0, 16);
 
-        return json_decode($this->getCipher($iv)->decrypt(substr($binary, 16)), true);
+        return json_decode($this->updateIv($iv)->decrypt(substr($binary, 16)), true);
     }
 
     /**
      * @param string $iv
      * @return AES
      */
-    private function getCipher($iv)
+    private function updateIV($iv)
     {
-        $cipher = new AES('cbc');
-        $cipher->setKey($this->key);
-        $cipher->setIV($iv);
+        $this->cipher->setIV($iv);
 
-        return $cipher;
+        return $this->cipher;
     }
 }
