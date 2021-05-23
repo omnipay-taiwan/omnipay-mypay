@@ -34,12 +34,7 @@ trait HasOrderResult
      */
     public function setRedeem($value)
     {
-        $data = json_decode($value, true);
-        if (json_last_error() !== JSON_ERROR_NONE) {
-            $data = $value;
-        }
-
-        return $this->setParameter('redeem', $data);
+        return $this->setParameter('redeem', $this->asArray($value));
     }
 
     /**
@@ -94,12 +89,7 @@ trait HasOrderResult
      */
     public function setResultContent($value)
     {
-        $data = json_decode($value, true);
-        if (json_last_error() !== JSON_ERROR_NONE) {
-            $data = $value;
-        }
-
-        return $this->setParameter('result_content', $data);
+        return $this->setParameter('result_content', $this->asArray($value));
     }
 
     /**
@@ -108,5 +98,19 @@ trait HasOrderResult
     public function getResultContent()
     {
         return $this->getParameter('result_content');
+    }
+
+    private function asArray($value)
+    {
+        if (! is_string($value)) {
+            return $value;
+        }
+
+        $data = json_decode($value, true);
+        if (json_last_error() === JSON_ERROR_NONE) {
+            return $data;
+        }
+
+        return $value;
     }
 }

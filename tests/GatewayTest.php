@@ -178,4 +178,21 @@ class GatewayTest extends GatewayTestCase
         self::assertEquals('d5jUed1tkQ9cDaD1', $response->getTransactionId());
         self::assertEquals('86579', $response->getTransactionReference());
     }
+
+    public function test_refund()
+    {
+        $this->setMockHttpResponse('RefundSuccess.txt');
+
+        $options = [
+            'uid' => '86579',
+            'key' => 'dee886ee19ddbb97e2968a1a8777fc7d',
+            'cost' => '1000',
+        ];
+        $response = $this->gateway->refund($options)->send();
+
+        self::assertTrue($response->isSuccessful());
+        self::assertEquals('B200', $response->getCode());
+        self::assertEquals('執行成功', $response->getMessage());
+        self::assertEquals('86584', $response->getTransactionReference());
+    }
 }

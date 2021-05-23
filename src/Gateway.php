@@ -3,13 +3,12 @@
 namespace Omnipay\MyPay;
 
 use Omnipay\Common\AbstractGateway;
-use Omnipay\Common\Message\AbstractRequest;
-use Omnipay\Common\Message\NotificationInterface;
 use Omnipay\Common\Message\RequestInterface;
 use Omnipay\MyPay\Message\AcceptNotificationRequest;
 use Omnipay\MyPay\Message\CompletePurchaseRequest;
 use Omnipay\MyPay\Message\FetchTransactionRequest;
 use Omnipay\MyPay\Message\PurchaseRequest;
+use Omnipay\MyPay\Message\RefundRequest;
 use Omnipay\MyPay\Traits\HasLocale;
 use Omnipay\MyPay\Traits\HasStore;
 
@@ -18,7 +17,6 @@ use Omnipay\MyPay\Traits\HasStore;
  * @method RequestInterface authorize(array $options = [])
  * @method RequestInterface completeAuthorize(array $options = [])
  * @method RequestInterface capture(array $options = [])
- * @method RequestInterface refund(array $options = [])
  * @method RequestInterface void(array $options = [])
  * @method RequestInterface createCard(array $options = [])
  * @method RequestInterface updateCard(array $options = [])
@@ -77,5 +75,14 @@ class Gateway extends AbstractGateway
     public function fetchTransaction(array $options = [])
     {
         return $this->createRequest(FetchTransactionRequest::class, $options);
+    }
+
+    /**
+     * @param array $options
+     * @return RequestInterface
+     */
+    public function refund(array $options = [])
+    {
+        return $this->createRequest(RefundRequest::class, $options);
     }
 }

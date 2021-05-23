@@ -1,0 +1,39 @@
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sat, 22 May 2021 12:28:50 GMT
+Content-Type: application/json; charset=UTF-8
+Connection: keep-alive
+Cache-Control: no-cache, private
+Status: 200 OK
+
+{
+    "row_data": {
+        "uid": 86584,
+        "refund_uid": 86592,
+        "key": "4175cdb107caf0543a5ca4868fe66630",
+        "prc": "230",
+        "finishtime": "20210524022622",
+        "order_id": "BIFUR3vXzDnclT4j",
+        "user_id": "DoSuccess3D",
+        "cost": 10,
+        "currency": "TWD",
+        "actual_cost": 10,
+        "actual_currency": "TWD",
+        "retmsg": "退款完成",
+        "pfn": "CREDITCARD",
+        "payment_name": "",
+        "nois": "",
+        "group_id": "",
+        "refund_type": 1,
+        "expected_refund_date": "",
+        "echo_0": "",
+        "echo_1": "",
+        "echo_2": "",
+        "echo_3": "",
+        "echo_4": ""
+    },
+    "key": "4175cdb107caf0543a5ca4868fe66630",
+    "uid": "86584",
+    "code": "B200",
+    "msg": "執行成功"
+}

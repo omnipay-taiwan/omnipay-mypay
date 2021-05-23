@@ -4,22 +4,7 @@ namespace Omnipay\MyPay\Traits;
 
 trait HasOrderInfo
 {
-    /**
-     * @param string|int $value
-     * @return $this
-     */
-    public function setCost($value)
-    {
-        return $this->setAmount($value);
-    }
-
-    /**
-     * @return string
-     */
-    public function getCost()
-    {
-        return $this->getAmount();
-    }
+    use HasCost;
 
     /**
      * @param string $value

@@ -31,7 +31,7 @@ class PurchaseRequestTest extends TestCase
             'user_id' => 'phper',
             'pfn' => 'all',
             'items' => [
-                new Item(['id' => '0886449', 'name' => '商品名稱', 'quantity' => 1, 'price' => 10]),
+                new Item(['name' => '商品名稱', 'quantity' => 1, 'price' => 10]),
             ],
             'vouchers' => [
                 new Voucher([
@@ -58,7 +58,7 @@ class PurchaseRequestTest extends TestCase
             'ip' => '127.0.0.1',
             'pfn' => 'all',
             'item' => 1,
-            'i_0_id' => '',
+            'i_0_id' => 'cffc597b139c38b7f737ddfe6f8c11a8',
             'i_0_name' => '商品名稱',
             'i_0_cost' => 10,
             'i_0_amount' => 1,
