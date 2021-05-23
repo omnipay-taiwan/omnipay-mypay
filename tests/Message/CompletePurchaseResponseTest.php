@@ -46,6 +46,7 @@ class CompletePurchaseResponseTest extends TestCase
         self::assertTrue($response->isSuccessful());
         self::assertEquals('250', $response->getCode());
         self::assertEquals('付款完成', $response->getMessage());
+        self::assertEquals('d5jUed1tkQ9cDaD1', $response->getTransactionId());
         self::assertEquals('86579', $response->getTransactionReference());
     }
 }

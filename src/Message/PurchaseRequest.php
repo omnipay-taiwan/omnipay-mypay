@@ -366,7 +366,7 @@ class PurchaseRequest extends AbstractRequest
         $items = $this->getItems();
         $data['item'] = count($items);
         foreach ($items as $index => $item) {
-            $data['i_'.$index.'_id'] = $item instanceof Item ? $item->getId() : '';
+            $data['i_'.$index.'_id'] = $item instanceof Item ? $item->getId() : md5($item->getName());
             $data['i_'.$index.'_name'] = $item->getName();
             $data['i_'.$index.'_cost'] = $item->getPrice();
             $data['i_'.$index.'_amount'] = $item->getQuantity();

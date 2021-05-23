@@ -4,6 +4,7 @@ namespace Omnipay\MyPay;
 
 use Omnipay\Common\AbstractGateway;
 use Omnipay\Common\Message\AbstractRequest;
+use Omnipay\Common\Message\NotificationInterface;
 use Omnipay\Common\Message\RequestInterface;
 use Omnipay\MyPay\Message\AcceptNotificationRequest;
 use Omnipay\MyPay\Message\CompletePurchaseRequest;
@@ -43,7 +44,8 @@ class Gateway extends AbstractGateway
     }
 
     /**
-     * @return AbstractRequest
+     * @param array $options
+     * @return RequestInterface
      */
     public function purchase(array $options = [])
     {
@@ -52,7 +54,7 @@ class Gateway extends AbstractGateway
 
     /**
      * @param array $options
-     * @return AbstractRequest
+     * @return RequestInterface
      */
     public function completePurchase(array $options = [])
     {
@@ -61,13 +63,17 @@ class Gateway extends AbstractGateway
 
     /**
      * @param array $options
-     * @return AbstractRequest
+     * @return RequestInterface
      */
     public function acceptNotification(array $options = [])
     {
         return $this->createRequest(AcceptNotificationRequest::class, $options);
     }
 
+    /**
+     * @param array $options
+     * @return RequestInterface
+     */
     public function fetchTransaction(array $options = [])
     {
         return $this->createRequest(FetchTransactionRequest::class, $options);

@@ -37,6 +37,11 @@ class CompletePurchaseResponse extends AbstractResponse implements NotificationI
         return $this->data['prc'];
     }
 
+    public function getTransactionId()
+    {
+        return $this->data['order_id'];
+    }
+
     /**
      * Gateway Reference.
      *
