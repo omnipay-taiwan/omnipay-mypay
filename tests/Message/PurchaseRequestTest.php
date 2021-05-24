@@ -48,7 +48,7 @@ class PurchaseRequestTest extends TestCase
         ]);
     }
 
-    public function test_get_data()
+    public function testGetData()
     {
         self::assertEquals([
             'store_uid' => '398800730001',

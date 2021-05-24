@@ -7,7 +7,7 @@ use Omnipay\Tests\TestCase;
 
 class PurchaseResponseTest extends TestCase
 {
-    public function test_purchase_success()
+    public function testPurchaseSuccess()
     {
         $httpResponse = $this->getMockHttpResponse('PurchaseSuccess.txt');
         $data = json_decode($httpResponse->getBody(), true);

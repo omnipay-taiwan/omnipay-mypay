@@ -7,7 +7,7 @@ use Omnipay\Tests\TestCase;
 
 class CompletePurchaseResponseTest extends TestCase
 {
-    public function test_complete_purchase_success()
+    public function testCompletePurchaseSuccess()
     {
         $data = [
             'key' => 'dee886ee19ddbb97e2968a1a8777fc7d',

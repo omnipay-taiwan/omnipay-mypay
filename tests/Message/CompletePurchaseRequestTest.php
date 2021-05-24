@@ -57,7 +57,7 @@ class CompletePurchaseRequestTest extends TestCase
         ]);
     }
 
-    public function test_get_data()
+    public function testGetData()
     {
         self::assertEquals([
             'key' => 'dee886ee19ddbb97e2968a1a8777fc7d',

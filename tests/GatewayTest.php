@@ -40,7 +40,7 @@ class GatewayTest extends GatewayTestCase
         ]);
     }
 
-    public function test_purchase()
+    public function testPurchase()
     {
         $this->setMockHttpResponse('PurchaseSuccess.txt');
 
@@ -82,7 +82,7 @@ class GatewayTest extends GatewayTestCase
         ], $options);
     }
 
-    public function test_complete_purchase()
+    public function testCompletePurchase()
     {
         $options = [
             'key' => 'dee886ee19ddbb97e2968a1a8777fc7d',
@@ -124,7 +124,7 @@ class GatewayTest extends GatewayTestCase
         self::assertEquals('86579', $response->getTransactionReference());
     }
 
-    public function test_accept_notification()
+    public function testAcceptNotification()
     {
         $options = [
             'key' => 'dee886ee19ddbb97e2968a1a8777fc7d',
@@ -162,7 +162,7 @@ class GatewayTest extends GatewayTestCase
         self::assertEquals('8888', $response->getMessage());
     }
 
-    public function test_fetch_transaction()
+    public function testFetchTransaction()
     {
         $this->setMockHttpResponse('FetchTransactionSuccess.txt');
 
@@ -179,7 +179,7 @@ class GatewayTest extends GatewayTestCase
         self::assertEquals('86579', $response->getTransactionReference());
     }
 
-    public function test_refund()
+    public function testRefund()
     {
         $this->setMockHttpResponse('RefundSuccess.txt');
 

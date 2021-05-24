@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class EncryptionTest extends TestCase
 {
-    public function test_encrypt_by_phpseclib_array()
+    public function testEncryptByPhpseclib()
     {
         //經銷商商店金鑰【從用戶端發動時，以驗證碼代替金鑰】
         $key = 'Xd668CSjnXQLD26Hia8vapkOgGXAv68s';
@@ -32,7 +32,7 @@ class EncryptionTest extends TestCase
         self::assertEquals($payment, decrypt($encrypt, $key));
     }
 
-    public function test_decrypt_by_phpseclib_array()
+    public function testDecryptByPhpseclib()
     {
         //經銷商商店金鑰【從用戶端發動時，以驗證碼代替金鑰】
         $key = 'Xd668CSjnXQLD26Hia8vapkOgGXAv68s';

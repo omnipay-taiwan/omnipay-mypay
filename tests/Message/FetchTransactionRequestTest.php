@@ -23,7 +23,7 @@ class FetchTransactionRequestTest extends TestCase
         ]);
     }
 
-    public function test_get_data()
+    public function testGetData()
     {
         self::assertEquals([
             'uid' => '86579',
