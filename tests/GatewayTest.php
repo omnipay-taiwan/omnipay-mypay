@@ -25,7 +25,7 @@ class GatewayTest extends GatewayTestCase
      */
     private $storeKey = 'Xd668CSjnXQLD26Hia8vapkOgGXAv68s';
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -159,7 +159,8 @@ class GatewayTest extends GatewayTestCase
 
         $response = $this->gateway->acceptNotification($options);
 
-        self::assertEquals('8888', $response->getMessage());
+        self::assertEquals('付款完成', $response->getMessage());
+        self::assertEquals('8888', $response->getReply());
     }
 
     public function testFetchTransaction()
