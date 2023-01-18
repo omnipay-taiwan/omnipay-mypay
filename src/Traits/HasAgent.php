@@ -10,7 +10,7 @@ trait HasAgent
      * 經銷商發動交易才能使用
      * 經銷商代收費是否含簡訊費 (0.不含 1.含).
      *
-     * @param int $value
+     * @param  int  $value
      * @return $this
      */
     public function setAgentSmsFeeType($value)
@@ -27,7 +27,7 @@ trait HasAgent
      * 經銷商發動交易才能使用
      * 經銷商代收費是否含手續費 (0.不含 1.含).
      *
-     * @param int $value
+     * @param  int  $value
      * @return $this
      */
     public function setAgentChargeFeeType($value)

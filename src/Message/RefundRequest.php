@@ -19,7 +19,7 @@ class RefundRequest extends AbstractRequest
      * 4.作廢或作廢重開(預設)
      * 6.折讓 如有電子發票此欄位有效.
      *
-     * @param int $value
+     * @param  int  $value
      * @return $this
      */
     public function setInvoiceState($value)

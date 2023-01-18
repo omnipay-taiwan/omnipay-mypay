@@ -8,7 +8,7 @@ trait HasInvoice
      * 是否開立發票
      * 0.不開立 1.開立 2.依系統設定(預設).
      *
-     * @param int $value
+     * @param  int  $value
      * @return $this
      */
     public function setIssueInvoiceState($value)
@@ -28,7 +28,7 @@ trait HasInvoice
      * 1: 應稅 2:零稅率 3: 免稅
      * 電子發票特店模式方始有效.
      *
-     * @param int $value
+     * @param  int  $value
      * @return $this
      */
     public function setInvoiceRatetype($value)
@@ -47,7 +47,7 @@ trait HasInvoice
     /**
      * 電子發票選擇實體發票時，帶入預設發票抬頭.
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setInvoiceB2bTitle($value)
@@ -67,7 +67,7 @@ trait HasInvoice
      * 若選擇實體發票，發票抬頭無法異動。
      * 0可以異動 1無法異動(預設0可以異動).
      *
-     * @param int $value
+     * @param  int  $value
      * @return $this
      */
     public function setInvoiceB2bTitleForce($value)
@@ -86,7 +86,7 @@ trait HasInvoice
     /**
      * 電子發票選擇實體發票時，帶入預設統一編號
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setInvoiceB2bId($value)
@@ -106,7 +106,7 @@ trait HasInvoice
      * 若選擇實體發票，統一編號無法異動。
      * 0可以異動 1無法異動(預設0可以異動).
      *
-     * @param int $value
+     * @param  int  $value
      * @return $this
      */
     public function setInvoiceB2bIdForce($value)
@@ -125,7 +125,7 @@ trait HasInvoice
     /**
      * 電子發票選擇實體發票時，帶入預設地址
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setInvoiceB2bAddress($value)
@@ -145,7 +145,7 @@ trait HasInvoice
      * 若選擇實體發票，預設地址無法異動。
      * 0可以異動 1無法異動(預設0可以異動).
      *
-     * @param int $value
+     * @param  int  $value
      * @return $this
      */
     public function setInvoiceB2bAddressForce($value)

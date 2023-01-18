@@ -8,7 +8,7 @@ trait HasUserInfo
      * 消費者姓名
      * 電子錢包交易必要欄位.
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setUserName($value)
@@ -28,7 +28,7 @@ trait HasUserInfo
      * 消費者真實姓名，電子錢包交易必要欄位
      * 若直接帶入消費者可減少填寫次數.
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setUserRealName($value)
@@ -47,7 +47,7 @@ trait HasUserInfo
     /**
      * 消費者地址
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setUserAddress($value)
@@ -67,7 +67,7 @@ trait HasUserInfo
      * 消費者身份證字號
      * 直接帶入可減少填寫次數.
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setUserSn($value)
@@ -86,7 +86,7 @@ trait HasUserInfo
     /**
      * 消費者家用電話(白天電話).
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setUserPhone($value)
@@ -106,7 +106,7 @@ trait HasUserInfo
      * 行動電話國碼(預設886)電子錢包交易必要欄位
      * 直接帶入可減少填寫次數.
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setUserCellphoneCode($value)
@@ -126,7 +126,7 @@ trait HasUserInfo
      * 消費者行動電話
      * 直接帶入可減少填寫次數.
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setUserCellphone($value)
@@ -146,7 +146,7 @@ trait HasUserInfo
      * 消費者 E-Mail，電子錢包交易必要欄位
      * 直接帶入可減少填寫次數.
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setUserEmail($value)
@@ -165,7 +165,7 @@ trait HasUserInfo
     /**
      * 消費者生日(格式為 YYYYMMDD，如 20090916).
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setUserBirthday($value)

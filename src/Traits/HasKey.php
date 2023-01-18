@@ -13,7 +13,7 @@ trait HasKey
     }
 
     /**
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setKey($value)

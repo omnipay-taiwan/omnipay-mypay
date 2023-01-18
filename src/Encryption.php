@@ -14,7 +14,8 @@ class Encryption
 
     /**
      * Encryption constructor.
-     * @param null $key
+     *
+     * @param  null  $key
      */
     public function __construct($key = null)
     {
@@ -23,7 +24,7 @@ class Encryption
     }
 
     /**
-     * @param string $key
+     * @param  string  $key
      * @return $this
      */
     public function setKey($key)
@@ -34,7 +35,7 @@ class Encryption
     }
 
     /**
-     * @param array $data
+     * @param  array  $data
      * @return string
      */
     public function encrypt(array $data)
@@ -45,7 +46,7 @@ class Encryption
     }
 
     /**
-     * @param string $plainText
+     * @param  string  $plainText
      * @return mixed
      */
     public function decrypt($plainText)
@@ -57,7 +58,7 @@ class Encryption
     }
 
     /**
-     * @param string $iv
+     * @param  string  $iv
      * @return AES
      */
     private function updateIV($iv)

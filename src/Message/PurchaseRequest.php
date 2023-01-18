@@ -48,7 +48,7 @@ class PurchaseRequest extends AbstractRequest
     /**
      * 折價(數值帶負數).
      *
-     * @param int $value
+     * @param  int  $value
      * @return $this
      */
     public function setDiscount($value)
@@ -68,7 +68,7 @@ class PurchaseRequest extends AbstractRequest
      * 使用虛擬帳號、超商代碼、無卡支付(pfn=3或6或 25)
      * 透過此參數，可自行定義繳費截止日。 若無參數，則為預設系統設定值，目前為三天。
      *
-     * @param int $value
+     * @param  int  $value
      * @return $this
      */
     public function setLimitPayDays($value)
@@ -87,7 +87,7 @@ class PurchaseRequest extends AbstractRequest
     /**
      * 運費.
      *
-     * @param int $value
+     * @param  int  $value
      * @return $this
      */
     public function setShippingFee($value)
@@ -107,7 +107,7 @@ class PurchaseRequest extends AbstractRequest
      * 啟用快速結帳
      * 0.關閉 1.開啟 (預設開啟).
      *
-     * @param int $value
+     * @param  int  $value
      * @return $this
      */
     public function setEnableQuickpay($value)
@@ -126,7 +126,7 @@ class PurchaseRequest extends AbstractRequest
     /**
      * 1網路交易(預設)/2實體交易(參閱附錄九).
      *
-     * @param int $value
+     * @param  int  $value
      * @return $this
      */
     public function setTransactionType($value)
@@ -151,7 +151,7 @@ class PurchaseRequest extends AbstractRequest
      * }
      * 其中的3或6為期數，013,822等為國內信用卡發卡單位(參考附錄十).
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setCreditcardInstallment($value)
@@ -170,7 +170,7 @@ class PurchaseRequest extends AbstractRequest
     /**
      * eACH交易代碼，如有使用eACH交易，必須帶入 約定可使用之交易代碼如560，交易代碼請參考 附錄十二.
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setEachCode($value)
@@ -188,7 +188,7 @@ class PurchaseRequest extends AbstractRequest
      * 如果使用此欄位資料，將取代所有消費者相同欄位內容
      * 串接『無卡分期』使用此欄位替代所有消費者欄位.
      *
-     * @param array $value
+     * @param  array  $value
      * @return $this
      */
     public function setUserData($value)
@@ -222,7 +222,8 @@ class PurchaseRequest extends AbstractRequest
      * 保證人薪轉存摺內頁:GRT7,
      * 保證人財力證明:GRT11,
      * 保證人其它資料:GRT16.
-     * @param array $value
+     *
+     * @param  array  $value
      * @return $this
      */
     public function setFilesPath($value)
@@ -244,7 +245,7 @@ class PurchaseRequest extends AbstractRequest
     }
 
     /**
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setIp($value)
@@ -262,6 +263,7 @@ class PurchaseRequest extends AbstractRequest
 
     /**
      * @return array
+     *
      * @throws InvalidRequestException
      */
     public function getData()
@@ -332,8 +334,8 @@ class PurchaseRequest extends AbstractRequest
     }
 
     /**
-     * @param Encryption $encryption
-     * @param array $data
+     * @param  Encryption  $encryption
+     * @param  array  $data
      * @return array
      */
     protected function createBody(Encryption $encryption, array $data)
@@ -358,7 +360,7 @@ class PurchaseRequest extends AbstractRequest
     }
 
     /**
-     * @param array $data
+     * @param  array  $data
      * @return array
      */
     private function appendItems(array $data)
@@ -426,7 +428,7 @@ class PurchaseRequest extends AbstractRequest
     }
 
     /**
-     * @param array $data
+     * @param  array  $data
      * @return array
      */
     private function filter(array $data)

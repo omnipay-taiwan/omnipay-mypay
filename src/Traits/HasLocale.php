@@ -5,7 +5,7 @@ namespace Omnipay\MyPay\Traits;
 trait HasLocale
 {
     /**
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setLocale($value)

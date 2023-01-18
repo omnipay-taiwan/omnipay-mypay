@@ -5,7 +5,7 @@ namespace Omnipay\MyPay\Traits;
 trait HasCost
 {
     /**
-     * @param string|int $value
+     * @param  string|int  $value
      * @return $this
      */
     public function setCost($value)

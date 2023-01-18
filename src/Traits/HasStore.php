@@ -15,7 +15,7 @@ trait HasStore
     /**
      * 特約商店商務代號
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setStoreUid($value)
@@ -32,7 +32,7 @@ trait HasStore
     }
 
     /**
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setStoreKey($value)

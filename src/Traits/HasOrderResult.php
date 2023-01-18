@@ -8,7 +8,7 @@ trait HasOrderResult
      * 支付類型
      * 1.一般2.定期3.紅利.
      *
-     * @param int $value
+     * @param  int  $value
      * @return $this
      */
     public function setTransType($value)
@@ -29,7 +29,7 @@ trait HasOrderResult
      * used 紅利折抵點數
      * amount 自付金額.
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setRedeem($value)
@@ -46,7 +46,7 @@ trait HasOrderResult
     }
 
     /**
-     * @param int $value
+     * @param  int  $value
      * @return $this
      */
     public function setResultType($value)
@@ -65,7 +65,7 @@ trait HasOrderResult
     /**
      * 資料內容所屬支付名稱.
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setResultContentType($value)
@@ -84,7 +84,7 @@ trait HasOrderResult
     /**
      * 資料內容(目前有資訊的支付方式有虛擬帳號、超商代碼).
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setResultContent($value)

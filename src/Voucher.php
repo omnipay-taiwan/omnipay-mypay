@@ -12,7 +12,8 @@ class Voucher
 
     /**
      * Voucher constructor.
-     * @param array|null $parameters
+     *
+     * @param  array|null  $parameters
      */
     public function __construct(array $parameters = null)
     {
@@ -20,7 +21,7 @@ class Voucher
     }
 
     /**
-     * @param array|null $parameters
+     * @param  array|null  $parameters
      * @return $this
      */
     public function initialize(array $parameters = null)
@@ -42,7 +43,7 @@ class Voucher
     /**
      * 票券張數.
      *
-     * @param string|int $value
+     * @param  string|int  $value
      * @return Voucher
      */
     public function setQuantity($value)
@@ -58,7 +59,7 @@ class Voucher
     /**
      * 面額.
      *
-     * @param string|int $value
+     * @param  string|int  $value
      * @return Voucher
      */
     public function setPrice($value)
@@ -74,7 +75,7 @@ class Voucher
     /**
      * 每張票券實際交易金額.
      *
-     * @param string|int $value
+     * @param  string|int  $value
      * @return Voucher
      */
     public function setCost($value)
@@ -92,7 +93,8 @@ class Voucher
 
     /**
      * 票券張數.
-     * @param string|int $value
+     *
+     * @param  string|int  $value
      * @return Voucher
      */
     public function setCount($value)
@@ -103,7 +105,7 @@ class Voucher
     /**
      * 履約保證起始.
      *
-     * @param string $value
+     * @param  string  $value
      * @return Voucher
      */
     public function setAssureStart($value)
@@ -119,7 +121,7 @@ class Voucher
     /**
      * 履約保證結束
      *
-     * @param string $value
+     * @param  string  $value
      * @return Voucher
      */
     public function setAssureEnd($value)
@@ -135,7 +137,7 @@ class Voucher
     /**
      * 票券有效起始時間.
      *
-     * @param string $value
+     * @param  string  $value
      * @return Voucher
      */
     public function setValidityStart($value)
@@ -151,7 +153,7 @@ class Voucher
     /**
      * 票券有效結束時間.
      *
-     * @param string $value
+     * @param  string  $value
      * @return Voucher
      */
     public function setValidityEnd($value)

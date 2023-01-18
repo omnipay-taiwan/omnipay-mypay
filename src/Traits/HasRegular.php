@@ -14,7 +14,7 @@ trait HasRegular
      * H:每半年扣款一次
      * A:每年扣款一次
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setRegular($value)
@@ -34,7 +34,7 @@ trait HasRegular
      * 如未使用到定期定額付費，不需傳此參數
      * 總期數(如為 12 期即代入 12，如果不設定終止期，請代入 0.
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setRegularTotal($value)
@@ -54,7 +54,7 @@ trait HasRegular
      * 定期扣款起扣日(若未指定日期、或早於今日，則 將判定為當日扣款)
      * (格式為 YYYYMMDD，如 20090916).
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setRegularFirstChargeDate($value)

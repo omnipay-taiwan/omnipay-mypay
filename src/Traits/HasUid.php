@@ -7,7 +7,7 @@ trait HasUid
     /**
      * MYPAY LINK之交易流水號
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setUid($value)

@@ -8,7 +8,7 @@ trait HasEWallet
      * 啟用電子錢包
      * 0.關閉 1.開啟 (預設關閉).
      *
-     * @param int $value
+     * @param  int  $value
      * @return $this
      */
     public function setEnableEwallet($value)
@@ -29,7 +29,7 @@ trait HasEWallet
      * 若使用本參數，pfn將自動限制為信用卡與海外 信用卡兩種交易
      * (虛擬卡號在消費者啟用電子錢 包時，會背景告知相關資訊，請參閱回傳格式(4) 電子錢包回傳格式).
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setVirtualPan($value)
@@ -48,7 +48,7 @@ trait HasEWallet
     /**
      * 1.支付頁面模式，mypay顯示結果(預設) 2.背景發動扣款(直接回傳交易回報參數).
      *
-     * @param int $value
+     * @param  int  $value
      * @return $this
      */
     public function setEwalletType($value)

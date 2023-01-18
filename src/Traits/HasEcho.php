@@ -5,7 +5,7 @@ namespace Omnipay\MyPay\Traits;
 trait HasEcho
 {
     /**
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setEcho0($value)
@@ -22,7 +22,7 @@ trait HasEcho
     }
 
     /**
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setEcho1($value)
@@ -39,7 +39,7 @@ trait HasEcho
     }
 
     /**
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setEcho2($value)
@@ -56,7 +56,7 @@ trait HasEcho
     }
 
     /**
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setEcho3($value)
@@ -73,7 +73,7 @@ trait HasEcho
     }
 
     /**
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setEcho4($value)

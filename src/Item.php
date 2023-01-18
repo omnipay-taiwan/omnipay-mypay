@@ -7,7 +7,7 @@ use Omnipay\Common\Item as BaseItem;
 class Item extends BaseItem
 {
     /**
-     * @param string $value
+     * @param  string  $value
      * @return Item
      */
     public function setId($value)

@@ -15,6 +15,7 @@ abstract class AbstractRequest extends BaseAbstractRequest
     use HasStore;
 
     protected $liveEndpoint = 'https://pay.usecase.cc/api/init';
+
     protected $testEndpoint = 'https://mypay.tw/api/init';
 
     public function sendData($data)
@@ -33,14 +34,14 @@ abstract class AbstractRequest extends BaseAbstractRequest
     }
 
     /**
-     * @param Encryption $encryption
-     * @param array $data
+     * @param  Encryption  $encryption
+     * @param  array  $data
      * @return array
      */
     abstract protected function createBody(Encryption $encryption, array $data);
 
     /**
-     * @param array $data
+     * @param  array  $data
      * @return ResponseInterface
      */
     abstract protected function createResponse($data);

@@ -12,14 +12,17 @@ class GatewayTest extends GatewayTestCase
 {
     /** @var Gateway */
     protected $gateway;
+
     /**
      * @var Encryption
      */
     private $encryption;
+
     /**
      * @var string
      */
     private $storeUid = '398800730001';
+
     /**
      * @var string
      */

@@ -12,7 +12,8 @@ class User
 
     /**
      * Voucher constructor.
-     * @param array|null $parameters
+     *
+     * @param  array|null  $parameters
      */
     public function __construct(array $parameters = null)
     {
@@ -20,7 +21,7 @@ class User
     }
 
     /**
-     * @param array|null $parameters
+     * @param  array|null  $parameters
      * @return $this
      */
     public function initialize(array $parameters = null)
@@ -36,7 +37,7 @@ class User
      * 黑名單機制，風險管理機制與可設定該帳號
      * 的交易次數與單筆金額與交易上線.
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setUserId($value)
@@ -55,7 +56,7 @@ class User
     /**
      * 消費者網際網路來源 IP.
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setIp($value)
@@ -74,7 +75,7 @@ class User
     /**
      * 消費者姓名.
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setUserName($value)
@@ -93,7 +94,7 @@ class User
     /**
      * 消費者真實姓名.
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setUserRealName($value)
@@ -112,7 +113,7 @@ class User
     /**
      * 消費者地址郵遞區號
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setUserAddressPostZone($value)
@@ -131,7 +132,7 @@ class User
     /**
      * 消費者地址
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setUserAddress($value)
@@ -150,7 +151,7 @@ class User
     /**
      * 1:身分證,2:統一證號,3:護照號碼 (消費者是 本國人為1,外國人2 or 3).
      *
-     * @param int $value
+     * @param  int  $value
      * @return User
      */
     public function setUserSnType($value)
@@ -169,7 +170,7 @@ class User
     /**
      * 消費者身份證字號/統一證號/護照號碼
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setUserSn($value)
@@ -188,7 +189,7 @@ class User
     /**
      * 消費者家用電話(白天電話):國碼(預設886).
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setUserPhoneCode($value)
@@ -207,7 +208,7 @@ class User
     /**
      * 消費者家用電話(白天電話):區碼
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setUserPhoneAreaCode($value)
@@ -226,7 +227,7 @@ class User
     /**
      * 消費者家用電話(白天電話).
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setUserPhone($value)
@@ -245,7 +246,7 @@ class User
     /**
      * 消費者行動電話國碼(預設886).
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setUserCellphoneCode($value)
@@ -264,7 +265,7 @@ class User
     /**
      * 消費者行動電話.
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setUserCellphone($value)
@@ -283,7 +284,7 @@ class User
     /**
      * 消費者 E-Mail.
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setUserEmail($value)
@@ -302,7 +303,7 @@ class User
     /**
      * 消費者生日(格式為 YYYYMMDD，如 20090916).
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setUserBirthday($value)
@@ -321,7 +322,7 @@ class User
     /**
      * 消費者戶籍地址:郵遞區號
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setResidenceAddressPostZone($value)
@@ -340,7 +341,7 @@ class User
     /**
      * 消費者戶籍地址:路街巷弄號樓室.
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setResidenceAddress($value)
@@ -359,7 +360,7 @@ class User
     /**
      * 消費者戶籍電話:區碼
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setResidencePhoneAreaCode($value)
@@ -378,7 +379,7 @@ class User
     /**
      * 消費者戶籍電話:號碼
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setResidencePhone($value)
@@ -397,7 +398,7 @@ class User
     /**
      * 消費者銀行帳戶:銀行代碼
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setBankCode($value)
@@ -416,7 +417,7 @@ class User
     /**
      * 消費者銀行帳戶: 分行代碼
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setBankBranchCode($value)
@@ -435,7 +436,7 @@ class User
     /**
      * 消費者銀行帳戶:銀行帳戶名稱.
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setBankAccountName($value)
@@ -454,7 +455,7 @@ class User
     /**
      * 消費者銀行帳戶:銀行帳號
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setBankAccountNumber($value)
@@ -474,7 +475,7 @@ class User
      * 消費者居住房屋:擁有者
      * 1:自有,2:配偶,3:親人,4租賃.
      *
-     * @param int $value
+     * @param  int  $value
      * @return User
      */
     public function setHouseOwner($value)
@@ -493,7 +494,7 @@ class User
     /**
      * 消費者居住房屋:開始居住年分(西元年).
      *
-     * @param int $value
+     * @param  int  $value
      * @return User
      */
     public function setLiveBeginYear($value)
@@ -512,7 +513,7 @@ class User
     /**
      * 消費者通訊地址:郵遞區號
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setMailingAddressPostZone($value)
@@ -531,7 +532,7 @@ class User
     /**
      * 消費者通訊地址:路街巷弄號樓室.
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setMailingAddress($value)
@@ -551,7 +552,7 @@ class User
      * 消費者婚姻狀況
      * 1:單身,2:已婚,3:離婚.
      *
-     * @param int $value
+     * @param  int  $value
      * @return User
      */
     public function setMaritalStatus($value)
@@ -570,7 +571,7 @@ class User
     /**
      * 消費者擁有子女數.
      *
-     * @param int $value
+     * @param  int  $value
      * @return User
      */
     public function setChildren($value)
@@ -590,7 +591,7 @@ class User
      * 消費者教育程度
      * 1:博士,2:研究所,3:大學/大專,4:高中職,5:國中/國小.
      *
-     * @param int $value
+     * @param  int  $value
      * @return User
      */
     public function setEducationLevel($value)
@@ -610,7 +611,7 @@ class User
      * 工作組織類型
      * 1:公司,2.營登,3:財法,4:社法,5:公職.
      *
-     * @param int $value
+     * @param  int  $value
      * @return User
      */
     public function setOrganizationType($value)
@@ -629,7 +630,7 @@ class User
     /**
      * 消費者公司統一編號(營登/財法/社法).
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setOrganizationId($value)
@@ -648,7 +649,7 @@ class User
     /**
      * 消費者公司名稱(服務單位).
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setOrganizationName($value)
@@ -667,7 +668,7 @@ class User
     /**
      * 消費者公司電話(服務單位電話):區碼
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setOrganizationPhoneAreaCode($value)
@@ -686,7 +687,7 @@ class User
     /**
      * 消費者公司電話(服務單位電話):電話號碼
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setOrganizationPhone($value)
@@ -705,7 +706,7 @@ class User
     /**
      * 消費者公司電話(服務單位電話):分機號碼
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setOrganizationPhoneExt($value)
@@ -724,7 +725,7 @@ class User
     /**
      * 消費者工作年資.
      *
-     * @param int $value
+     * @param  int  $value
      * @return User
      */
     public function setWorkingYears($value)
@@ -743,7 +744,7 @@ class User
     /**
      * 消費者月薪.
      *
-     * @param int $value
+     * @param  int  $value
      * @return User
      */
     public function setMonthlySalary($value)
@@ -762,7 +763,7 @@ class User
     /**
      * 消費者法定代理人:姓名.
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setLegalRepresentativeName($value)
@@ -781,7 +782,7 @@ class User
     /**
      * 消費者法定代理人:身分證字號
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setLegalRepresentativePersonalId($value)
@@ -800,7 +801,7 @@ class User
     /**
      * 消費者法定代理人:出生日期(格式為 YYYYMMDD，如20090916).
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setLegalRepresentativeBirthday($value)
@@ -819,7 +820,7 @@ class User
     /**
      * 消費者法定代理人:聯絡地址:郵遞區號
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setLegalRepresentativeContactAddressPostZone($value)
@@ -838,7 +839,7 @@ class User
     /**
      * 消費者法定代理人:聯絡地址:路街巷弄號樓.
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setLegalRepresentativeContactAddress($value)
@@ -857,7 +858,7 @@ class User
     /**
      * 消費者法定代理人:住家電話:區碼
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setLegalRepresentativeHomePhoneAreaCode($value)
@@ -876,7 +877,7 @@ class User
     /**
      * 消費者法定代理人:住家電話:電話號碼
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setLegalRepresentativeHomePhone($value)
@@ -895,7 +896,7 @@ class User
     /**
      * 消費者法定代理人: 行動電話.
      *
-     * @param string $value
+     * @param  string  $value
      * @return User
      */
     public function setLegalRepresentativeCellphone($value)

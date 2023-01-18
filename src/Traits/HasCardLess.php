@@ -9,7 +9,7 @@ trait HasCardLess
      * 如為多金融服務商產品格式為JSON ["A1010001", "A2010001"]，但如產品名稱代碼
      * 為同金融服務商，則以第一筆為主。
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setCardlessCode($value)
@@ -29,7 +29,7 @@ trait HasCardLess
      * 串接『無卡分期』
      * [3,6,9,12] 帶入消費者可選擇之分期期數，JSON 陣列格式。
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setCardlessInstallment($value)

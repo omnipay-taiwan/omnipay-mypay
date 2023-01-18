@@ -22,7 +22,7 @@ class CompletePurchaseRequest extends BaseAbstractRequest
     /**
      * 交易回傳碼(參閱附錄二).
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setPrc($value)
@@ -41,7 +41,7 @@ class CompletePurchaseRequest extends BaseAbstractRequest
     /**
      * 卡號/VA/超商代碼
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setCardno($value)
@@ -60,7 +60,7 @@ class CompletePurchaseRequest extends BaseAbstractRequest
     /**
      * 銀行交易授權碼
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setAcode($value)
@@ -79,7 +79,7 @@ class CompletePurchaseRequest extends BaseAbstractRequest
     /**
      * 實際交易金額.
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setActualCost($value)
@@ -98,7 +98,7 @@ class CompletePurchaseRequest extends BaseAbstractRequest
     /**
      * 實際交易幣別.
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setActualCurrency($value)
@@ -117,7 +117,7 @@ class CompletePurchaseRequest extends BaseAbstractRequest
     /**
      * 愛心捐款金額(幣別同實際交易幣別).
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setLoveCost($value)
@@ -136,7 +136,7 @@ class CompletePurchaseRequest extends BaseAbstractRequest
     /**
      * 回傳訊息.
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setRetmsg($value)
@@ -155,7 +155,7 @@ class CompletePurchaseRequest extends BaseAbstractRequest
     /**
      * 交易完成時間(YYYYMMDDHHmmss).
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setFinishtime($value)
@@ -174,7 +174,7 @@ class CompletePurchaseRequest extends BaseAbstractRequest
     /**
      * 扣款名稱(定期定額/定期分期交易專用).
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setPaymentName($value)
@@ -193,7 +193,7 @@ class CompletePurchaseRequest extends BaseAbstractRequest
     /**
      * 期數 (定期定額/定期分期交易專用).
      *
-     * @param int $value
+     * @param  int  $value
      * @return $this
      */
     public function setNois($value)
@@ -212,7 +212,7 @@ class CompletePurchaseRequest extends BaseAbstractRequest
     /**
      * 銀行代碼 虛擬帳號資訊.
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setBankId($value)
@@ -231,7 +231,7 @@ class CompletePurchaseRequest extends BaseAbstractRequest
     /**
      * 有效日期虛擬帳號、超商代碼、無卡分期資訊.
      *
-     * @param string $value
+     * @param  string  $value
      * @return $this
      */
     public function setExpiredDate($value)
@@ -285,7 +285,7 @@ class CompletePurchaseRequest extends BaseAbstractRequest
     }
 
     /**
-     * @param array $data
+     * @param  array  $data
      * @return CompletePurchaseResponse
      */
     public function sendData($data)

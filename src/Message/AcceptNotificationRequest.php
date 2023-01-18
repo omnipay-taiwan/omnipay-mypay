@@ -3,12 +3,11 @@
 namespace Omnipay\MyPay\Message;
 
 use Omnipay\Common\Message\NotificationInterface;
-use Omnipay\Common\Message\ResponseInterface;
 
 class AcceptNotificationRequest extends CompletePurchaseRequest implements NotificationInterface
 {
     /**
-     * @param array $data
+     * @param  array  $data
      * @return AcceptNotificationResponse
      */
     public function sendData($data)
