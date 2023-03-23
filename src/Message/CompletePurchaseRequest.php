@@ -3,6 +3,7 @@
 namespace Omnipay\MyPay\Message;
 
 use Omnipay\Common\Message\AbstractRequest as BaseAbstractRequest;
+use Omnipay\MyPay\Traits\HasAmount;
 use Omnipay\MyPay\Traits\HasEcho;
 use Omnipay\MyPay\Traits\HasKey;
 use Omnipay\MyPay\Traits\HasOrderInfo;
@@ -18,6 +19,7 @@ class CompletePurchaseRequest extends BaseAbstractRequest
     use HasOrderInfo;
     use HasOrderResult;
     use HasEcho;
+    use HasAmount;
 
     /**
      * 交易回傳碼(參閱附錄二).

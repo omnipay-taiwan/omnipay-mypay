@@ -3,6 +3,7 @@
 namespace Omnipay\MyPay\Message;
 
 use Omnipay\MyPay\Encryption;
+use Omnipay\MyPay\Traits\HasAmount;
 use Omnipay\MyPay\Traits\HasCost;
 use Omnipay\MyPay\Traits\HasKey;
 use Omnipay\MyPay\Traits\HasStore;
@@ -14,6 +15,7 @@ class RefundRequest extends AbstractRequest
     use HasUid;
     use HasKey;
     use HasCost;
+    use HasAmount;
 
     /**
      * 4.作廢或作廢重開(預設)

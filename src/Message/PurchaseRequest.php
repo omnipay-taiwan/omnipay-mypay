@@ -6,6 +6,7 @@ use Omnipay\Common\Exception\InvalidRequestException;
 use Omnipay\MyPay\Encryption;
 use Omnipay\MyPay\Item;
 use Omnipay\MyPay\Traits\HasAgent;
+use Omnipay\MyPay\Traits\HasAmount;
 use Omnipay\MyPay\Traits\HasCardLess;
 use Omnipay\MyPay\Traits\HasEcho;
 use Omnipay\MyPay\Traits\HasEWallet;
@@ -31,6 +32,7 @@ class PurchaseRequest extends AbstractRequest
     use HasInvoice;
     use HasLocale;
     use HasAgent;
+    use HasAmount;
 
     public function setVouchers($value)
     {
@@ -282,7 +284,7 @@ class PurchaseRequest extends AbstractRequest
             'user_cellphone' => $this->getUserCellphone(),
             'user_email' => $this->getUserEmail(),
             'user_birthday' => $this->getUserBirthday(),
-            'cost' => (int) $this->getAmount(),
+            'cost' => $this->getAmount(),
             'currency' => $this->getCurrency(),
             'order_id' => $this->getTransactionId(),
             'regular' => $this->getRegular(),

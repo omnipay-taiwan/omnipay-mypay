@@ -66,7 +66,7 @@ class CompletePurchaseRequestTest extends TestCase
             'uid' => '86579',
             'order_id' => 'd5jUed1tkQ9cDaD1',
             'user_id' => 'DoSuccess3D',
-            'cost' => '1000.00',
+            'cost' => '1000',
             'currency' => 'TWD',
             'actual_cost' => '1000',
             'actual_currency' => 'TWD',
