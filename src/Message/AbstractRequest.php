@@ -34,8 +34,6 @@ abstract class AbstractRequest extends BaseAbstractRequest
     }
 
     /**
-     * @param  Encryption  $encryption
-     * @param  array  $data
      * @return array
      */
     abstract protected function createBody(Encryption $encryption, array $data);

@@ -31,7 +31,6 @@ class FetchTransactionRequest extends AbstractRequest
     }
 
     /**
-     * @param $data
      * @return FetchTransactionResponse
      */
     protected function createResponse($data)

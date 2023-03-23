@@ -44,7 +44,6 @@ trait HasAgent
      * 經銷商發動交易才能使用
      * 經銷商收取費用，限用金額，不能使用%.
      *
-     * @param $value
      * @return PurchaseRequest
      */
     public function setAgentChargeFee($value)

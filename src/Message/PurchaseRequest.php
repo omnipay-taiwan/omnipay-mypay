@@ -334,8 +334,6 @@ class PurchaseRequest extends AbstractRequest
     }
 
     /**
-     * @param  Encryption  $encryption
-     * @param  array  $data
      * @return array
      */
     protected function createBody(Encryption $encryption, array $data)
@@ -351,7 +349,6 @@ class PurchaseRequest extends AbstractRequest
     }
 
     /**
-     * @param $data
      * @return PurchaseResponse
      */
     protected function createResponse($data)
@@ -360,7 +357,6 @@ class PurchaseRequest extends AbstractRequest
     }
 
     /**
-     * @param  array  $data
      * @return array
      */
     private function appendItems(array $data)
@@ -428,7 +424,6 @@ class PurchaseRequest extends AbstractRequest
     }
 
     /**
-     * @param  array  $data
      * @return array
      */
     private function filter(array $data)

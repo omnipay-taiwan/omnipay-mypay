@@ -12,8 +12,6 @@ class Voucher
 
     /**
      * Voucher constructor.
-     *
-     * @param  array|null  $parameters
      */
     public function __construct(array $parameters = null)
     {
@@ -21,7 +19,6 @@ class Voucher
     }
 
     /**
-     * @param  array|null  $parameters
      * @return $this
      */
     public function initialize(array $parameters = null)

@@ -35,7 +35,6 @@ class Encryption
     }
 
     /**
-     * @param  array  $data
      * @return string
      */
     public function encrypt(array $data)
