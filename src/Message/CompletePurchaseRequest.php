@@ -258,7 +258,7 @@ class CompletePurchaseRequest extends BaseAbstractRequest
             'key' => $this->getKey(),
             'prc' => $this->getPrc(),
             'finishtime' => $this->getFinishtime(),
-            'uid' => $this->getUid(),
+            'uid' => $this->getTransactionReference(),
             'order_id' => $this->getOrderId(),
             'user_id' => $this->getUserId(),
             'cost' => $this->getCost(),

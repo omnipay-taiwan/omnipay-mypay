@@ -39,11 +39,11 @@ class RefundRequest extends AbstractRequest
 
     public function getData()
     {
-        $this->validate('key', 'uid', 'amount');
+        $this->validate('key', 'transactionReference', 'amount');
 
         return [
             'key' => $this->getKey(),
-            'uid' => $this->getUid(),
+            'uid' => $this->getTransactionReference(),
             'cost' => $this->getAmount(),
             'invoice_state' => $this->getInvoiceState(),
         ];

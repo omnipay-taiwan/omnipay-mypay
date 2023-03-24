@@ -12,7 +12,7 @@ trait HasUid
      */
     public function setUid($value)
     {
-        return $this->setParameter('uid', $value);
+        return $this->setTransactionReference($value);
     }
 
     /**
@@ -20,6 +20,6 @@ trait HasUid
      */
     public function getUid()
     {
-        return $this->getParameter('uid');
+        return $this->getTransactionReference();
     }
 }

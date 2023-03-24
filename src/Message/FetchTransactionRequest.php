@@ -13,9 +13,9 @@ class FetchTransactionRequest extends AbstractRequest
 
     public function getData()
     {
-        $this->validate('uid', 'key');
+        $this->validate('transactionReference', 'key');
 
-        return ['uid' => $this->getUid(), 'key' => $this->getKey()];
+        return ['uid' => $this->getTransactionReference(), 'key' => $this->getKey()];
     }
 
     protected function createBody(Encryption $encryption, array $data)
