@@ -3,7 +3,7 @@
 namespace Omnipay\MyPay\Message;
 
 use Omnipay\Common\Exception\InvalidRequestException;
-use Omnipay\MyPay\Encryption;
+use Omnipay\MyPay\Encryptor;
 use Omnipay\MyPay\Item;
 use Omnipay\MyPay\Traits\HasAgent;
 use Omnipay\MyPay\Traits\HasAmount;
@@ -338,7 +338,7 @@ class PurchaseRequest extends AbstractRequest
     /**
      * @return array
      */
-    protected function createBody(Encryption $encryption, array $data)
+    protected function createBody(Encryptor $encryption, array $data)
     {
         return [
             'store_uid' => $this->getStoreUid(),

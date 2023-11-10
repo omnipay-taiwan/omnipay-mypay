@@ -2,7 +2,7 @@
 
 namespace Omnipay\MyPay\Test;
 
-use Omnipay\MyPay\Encryption;
+use Omnipay\MyPay\Encryptor;
 use Omnipay\MyPay\Gateway;
 use Omnipay\MyPay\Item;
 use Omnipay\Tests\GatewayTestCase;
@@ -14,7 +14,7 @@ class GatewayTest extends GatewayTestCase
     protected $gateway;
 
     /**
-     * @var Encryption
+     * @var Encryptor
      */
     private $encryption;
 
@@ -35,7 +35,7 @@ class GatewayTest extends GatewayTestCase
         $httpRequest = Request::createFromGlobals();
         $httpRequest->server->set('REMOTE_ADDR', '127.0.0.1');
         $this->gateway = new Gateway($this->getHttpClient(), $httpRequest);
-        $this->encryption = new Encryption($this->storeKey);
+        $this->encryption = new Encryptor($this->storeKey);
         $this->gateway->initialize([
             'store_uid' => $this->storeUid,
             'store_key' => $this->storeKey,

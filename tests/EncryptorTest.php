@@ -2,10 +2,10 @@
 
 namespace Omnipay\MyPay\Test;
 
-use Omnipay\MyPay\Encryption;
+use Omnipay\MyPay\Encryptor;
 use PHPUnit\Framework\TestCase;
 
-class EncryptionTest extends TestCase
+class EncryptorTest extends TestCase
 {
     public function testEncryptByPhpseclib()
     {
@@ -26,7 +26,7 @@ class EncryptionTest extends TestCase
             'ip' => '127.0.0.1', // 此為消費者IP，會做為驗證用
             'pfn' => 'all',
         ];
-        $encryption = new Encryption($key);
+        $encryption = new Encryptor($key);
         $encrypt = $encryption->encrypt($payment);
 
         self::assertEquals($payment, decrypt($encrypt, $key));
@@ -52,7 +52,7 @@ class EncryptionTest extends TestCase
             'pfn' => 'all',
         ];
         $encrypt = encrypt($payment, $key);
-        $encryption = new Encryption($key);
+        $encryption = new Encryptor($key);
 
         self::assertEquals($payment, $encryption->decrypt($encrypt));
     }

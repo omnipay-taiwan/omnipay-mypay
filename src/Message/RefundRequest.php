@@ -2,7 +2,7 @@
 
 namespace Omnipay\MyPay\Message;
 
-use Omnipay\MyPay\Encryption;
+use Omnipay\MyPay\Encryptor;
 use Omnipay\MyPay\Traits\HasAmount;
 use Omnipay\MyPay\Traits\HasCost;
 use Omnipay\MyPay\Traits\HasKey;
@@ -49,7 +49,7 @@ class RefundRequest extends AbstractRequest
         ];
     }
 
-    protected function createBody(Encryption $encryption, array $data)
+    protected function createBody(Encryptor $encryption, array $data)
     {
         return [
             'store_uid' => $this->getStoreUid(),

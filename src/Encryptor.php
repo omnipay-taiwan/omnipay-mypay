@@ -5,7 +5,7 @@ namespace Omnipay\MyPay;
 use phpseclib3\Crypt\AES;
 use phpseclib3\Crypt\Random;
 
-class Encryption
+class Encryptor
 {
     /**
      * @var AES

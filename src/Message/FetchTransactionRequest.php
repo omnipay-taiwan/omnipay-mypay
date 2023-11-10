@@ -2,7 +2,7 @@
 
 namespace Omnipay\MyPay\Message;
 
-use Omnipay\MyPay\Encryption;
+use Omnipay\MyPay\Encryptor;
 use Omnipay\MyPay\Traits\HasKey;
 use Omnipay\MyPay\Traits\HasUid;
 
@@ -18,7 +18,7 @@ class FetchTransactionRequest extends AbstractRequest
         return ['uid' => $this->getTransactionReference(), 'key' => $this->getKey()];
     }
 
-    protected function createBody(Encryption $encryption, array $data)
+    protected function createBody(Encryptor $encryption, array $data)
     {
         return [
             'store_uid' => $this->getStoreUid(),
