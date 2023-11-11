@@ -9,6 +9,16 @@ use Omnipay\Tests\TestCase;
 class CompletePurchaseRequestTest extends TestCase
 {
     /**
+     * @var string
+     */
+    private $storeUid = '398800730001';
+
+    /**
+     * @var string
+     */
+    private $storeKey = 'Xd668CSjnXQLD26Hia8vapkOgGXAv68s';
+
+    /**
      * @var PurchaseRequest
      */
     private $request;
@@ -16,9 +26,7 @@ class CompletePurchaseRequestTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-
-        $this->request = new CompletePurchaseRequest($this->getHttpClient(), $this->getHttpRequest());
-        $this->request->initialize([
+        $data = [
             'uid' => '86579',
             'key' => 'dee886ee19ddbb97e2968a1a8777fc7d',
             'prc' => '250',
@@ -54,16 +62,32 @@ class CompletePurchaseRequestTest extends TestCase
             'echo_2' => null,
             'echo_3' => null,
             'echo_4' => null,
+        ];
+
+        $httpRequest = $this->getHttpRequest();
+        $httpRequest->request->add($data);
+        $this->request = new CompletePurchaseRequest($this->getHttpClient(), $httpRequest);
+        $this->request->initialize([
+            'store_uid' => $this->storeUid,
+            'store_key' => $this->storeKey,
+            'locale' => 'en',
         ]);
     }
 
     public function testGetData()
     {
         self::assertEquals([
+            'uid' => '86579',
             'key' => 'dee886ee19ddbb97e2968a1a8777fc7d',
             'prc' => '250',
             'finishtime' => '20210523141536',
-            'uid' => '86579',
+            'cardno' => '490706******5101',
+            'acode' => 'AA1234',
+            'issuing_bank' => '合作金庫',
+            'issuing_bank_uid' => '006',
+            'transaction_mode' => '1',
+            'supplier_name' => '高鉅金融',
+            'supplier_code' => 'T0',
             'order_id' => 'd5jUed1tkQ9cDaD1',
             'user_id' => 'DoSuccess3D',
             'cost' => '1000',

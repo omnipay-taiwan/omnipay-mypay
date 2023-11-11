@@ -6,7 +6,6 @@ use Omnipay\MyPay\Encryptor;
 use Omnipay\MyPay\Gateway;
 use Omnipay\MyPay\Item;
 use Omnipay\Tests\GatewayTestCase;
-use Symfony\Component\HttpFoundation\Request;
 
 class GatewayTest extends GatewayTestCase
 {
@@ -16,7 +15,7 @@ class GatewayTest extends GatewayTestCase
     /**
      * @var Encryptor
      */
-    private $encryption;
+    private $encryptor;
 
     /**
      * @var string
@@ -32,10 +31,9 @@ class GatewayTest extends GatewayTestCase
     {
         parent::setUp();
 
-        $httpRequest = Request::createFromGlobals();
-        $httpRequest->server->set('REMOTE_ADDR', '127.0.0.1');
-        $this->gateway = new Gateway($this->getHttpClient(), $httpRequest);
-        $this->encryption = new Encryptor($this->storeKey);
+        $this->getHttpRequest()->server->add(['REMOTE_ADDR' => '127.0.0.1']);
+        $this->gateway = new Gateway($this->getHttpClient(), $this->getHttpRequest());
+        $this->encryptor = new Encryptor($this->storeKey);
         $this->gateway->initialize([
             'store_uid' => $this->storeUid,
             'store_key' => $this->storeKey,
@@ -64,8 +62,8 @@ class GatewayTest extends GatewayTestCase
 
         $body = (string) $this->getMockClient()->getLastRequest()->getBody();
         parse_str($body, $params);
-        $service = $this->encryption->decrypt($params['service']);
-        $options = $this->encryption->decrypt($params['encry_data']);
+        $service = $this->encryptor->decrypt($params['service']);
+        $options = $this->encryptor->decrypt($params['encry_data']);
 
         self::assertEquals($this->storeUid, $params['store_uid']);
         self::assertEquals(['service_name' => 'api', 'cmd' => 'api/orders'], $service);
@@ -87,7 +85,7 @@ class GatewayTest extends GatewayTestCase
 
     public function testCompletePurchase()
     {
-        $options = [
+        $this->getHttpRequest()->request->add([
             'key' => 'dee886ee19ddbb97e2968a1a8777fc7d',
             'prc' => '250',
             'finishtime' => '20210523141536',
@@ -116,9 +114,9 @@ class GatewayTest extends GatewayTestCase
             'echo_2' => null,
             'echo_3' => null,
             'echo_4' => null,
-        ];
+        ]);
 
-        $response = $this->gateway->completePurchase($options)->send();
+        $response = $this->gateway->completePurchase()->send();
 
         self::assertTrue($response->isSuccessful());
         self::assertEquals('250', $response->getCode());
@@ -129,7 +127,7 @@ class GatewayTest extends GatewayTestCase
 
     public function testAcceptNotification()
     {
-        $options = [
+        $this->getHttpRequest()->request->add([
             'key' => 'dee886ee19ddbb97e2968a1a8777fc7d',
             'prc' => '250',
             'finishtime' => '20210523141536',
@@ -158,9 +156,9 @@ class GatewayTest extends GatewayTestCase
             'echo_2' => null,
             'echo_3' => null,
             'echo_4' => null,
-        ];
+        ]);
 
-        $response = $this->gateway->acceptNotification($options);
+        $response = $this->gateway->acceptNotification();
 
         self::assertEquals('付款完成', $response->getMessage());
         self::assertEquals('8888', $response->getReply());
