@@ -13,7 +13,7 @@ class Voucher
     /**
      * Voucher constructor.
      */
-    public function __construct(array $parameters = null)
+    public function __construct(?array $parameters = null)
     {
         $this->initialize($parameters);
     }
@@ -21,7 +21,7 @@ class Voucher
     /**
      * @return $this
      */
-    public function initialize(array $parameters = null)
+    public function initialize(?array $parameters = null)
     {
         $this->parameters = new ParameterBag;
         Helper::initialize($this, $parameters);

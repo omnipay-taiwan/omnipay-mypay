@@ -11,11 +11,11 @@ use Omnipay\MyPay\Traits\HasUid;
 
 class RefundRequest extends AbstractRequest
 {
+    use HasAmount;
+    use HasCost;
+    use HasKey;
     use HasStore;
     use HasUid;
-    use HasKey;
-    use HasCost;
-    use HasAmount;
 
     /**
      * 4.作廢或作廢重開(預設)

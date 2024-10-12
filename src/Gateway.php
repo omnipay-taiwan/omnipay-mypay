@@ -25,8 +25,8 @@ use Omnipay\MyPay\Traits\HasStore;
  */
 class Gateway extends AbstractGateway
 {
-    use HasStore;
     use HasLocale;
+    use HasStore;
 
     public function getName()
     {

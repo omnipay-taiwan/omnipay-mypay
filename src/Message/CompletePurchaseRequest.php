@@ -12,6 +12,7 @@ class CompletePurchaseRequest extends BaseAbstractRequest
 
     /**
      * @return array
+     *
      * @throws JsonException
      */
     public function getData()

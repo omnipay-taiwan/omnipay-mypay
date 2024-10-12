@@ -23,16 +23,16 @@ use Omnipay\MyPay\Traits\HasUserInfo;
  */
 class PurchaseRequest extends AbstractRequest
 {
-    use HasOrderInfo;
-    use HasUserInfo;
-    use HasRegular;
-    use HasEcho;
-    use HasEWallet;
-    use HasCardLess;
-    use HasInvoice;
-    use HasLocale;
     use HasAgent;
     use HasAmount;
+    use HasCardLess;
+    use HasEcho;
+    use HasEWallet;
+    use HasInvoice;
+    use HasLocale;
+    use HasOrderInfo;
+    use HasRegular;
+    use HasUserInfo;
 
     public function setVouchers($value)
     {

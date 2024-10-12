@@ -2,6 +2,4 @@
 
 namespace Omnipay\MyPay\Message;
 
-class FetchTransactionResponse extends CompletePurchaseResponse
-{
-}
+class FetchTransactionResponse extends CompletePurchaseResponse {}
