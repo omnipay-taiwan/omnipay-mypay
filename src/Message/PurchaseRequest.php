@@ -296,7 +296,7 @@ class PurchaseRequest extends AbstractRequest
             'echo_2' => $this->getEcho2(),
             'echo_3' => $this->getEcho3(),
             'echo_4' => $this->getEcho4(),
-            'pfn' => $this->getPfn(),
+            'pfn' => $this->getPaymentMethod() ?: 'all',
             'success_returl' => $this->getReturnUrl(),
             'failure_returl' => $this->getReturnUrl(),
             'discount' => $this->getDiscount(),

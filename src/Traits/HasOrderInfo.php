@@ -34,7 +34,7 @@ trait HasOrderInfo
      */
     public function setPfn($value)
     {
-        return $this->setParameter('pfn', $value);
+        return $this->setPaymentMethod($value);
     }
 
     /**
@@ -42,7 +42,7 @@ trait HasOrderInfo
      */
     public function getPfn()
     {
-        return $this->getParameter('pfn') ?: 'all';
+        return $this->getPaymentMethod();
     }
 
     /**
